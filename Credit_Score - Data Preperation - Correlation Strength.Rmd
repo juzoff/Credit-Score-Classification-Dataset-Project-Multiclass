@@ -1,0 +1,567 @@
+---
+title: "Credit_Score - Data Preperation - Correlation Strength"
+output: html_document
+date: "2024-11-10"
+---
+
+
+#Opening File 
+
+```{r}
+# Set the file path for the CSV file
+file_path <- "C:/Users/jivko/Documents/Data Analytics, Big Data, and Predictive Analytics/Personal Project/Credit_Score_Multiclass/Credit_score_cleaned_data.csv"
+
+# Read the CSV file into a dataframe
+credit_score <- read.csv(file_path, header = TRUE)
+```
+
+```{r}
+# Print the first few rows of the dataframe
+print(head(credit_score))
+```
+
+```{r}
+# Open the dataframe in R's data viewer (use this line once)
+View(credit_score)
+```
+
+#Structure of dataframe
+```{r}
+str(credit_score)
+```
+
+#Missing Values Check
+```{r}
+# Check for missing values in each column
+colSums(is.na(credit_score))
+```
+
+```{r}
+# Check if there are any missing values in the dataframe
+any(is.na(credit_score))
+```
+
+#Function for Numerical and Categorical Correlation - ANOVA - Eta Squared
+
+```{r}
+# Load necessary library
+if (!require("lsr")) install.packages("lsr")  # lsr package provides the etaSquared function
+library(lsr)
+
+# Define function to calculate p-value, eta-squared, and show means for each level of categorical variable
+calc_anova_eta_squared <- function(data, categorical_var, numeric_var) {
+  
+  # Convert categorical variable to factor if not already
+  data[[categorical_var]] <- as.factor(data[[categorical_var]])
+  
+  # Perform ANOVA
+  anova_model <- aov(data[[numeric_var]] ~ data[[categorical_var]], data = data)
+  
+  # Extract the p-value
+  p_value <- summary(anova_model)[[1]][["Pr(>F)"]][1]
+  
+  # Format p-value: Display "<.0001" if p-value is very small
+  formatted_p_value <- if (p_value < 0.0001) "<.0001" else format.pval(p_value, digits = 4)
+  
+  # Calculate eta-squared
+  eta_squared <- etaSquared(anova_model)[1, "eta.sq"]
+  
+  # Calculate mean of numeric variable for each level of the categorical variable
+  group_means <- tapply(data[[numeric_var]], data[[categorical_var]], mean)
+  
+  # Output results
+  list(
+    p_value = formatted_p_value,
+    eta_squared = eta_squared,
+    significance = ifelse(p_value < 0.05, "Significant", "Not Significant"),
+    interpretation = ifelse(eta_squared < 0.06, "Weak correlation",
+                            ifelse(eta_squared < 0.14, "Moderate correlation", "Strong correlation")),
+    means = group_means  # Include the means of the numeric variable for each category
+  )
+}
+
+# Example usage:
+result <- calc_anova_eta_squared(credit_score, "Credit_Score", "Annual_Income")
+print(result)
+```
+
+#Categorical and Numeric Attributes - ANOVA and Eta-Squared Calculation with Results Stored in a List for Categorical and Numeric Variables
+
+```{r}
+# Load necessary libraries
+if (!require("progress")) install.packages("progress")
+if (!require("lsr")) install.packages("lsr")  # lsr package for etaSquared function
+library(progress)
+library(lsr)
+
+# Define function to calculate p-value, eta-squared, and show means for each level of categorical variable
+calc_anova_eta_squared <- function(data, categorical_vars, numeric_vars) {
+  
+  # Initialize the progress bar
+  total_combinations <- length(categorical_vars) * length(numeric_vars)
+  pb <- progress_bar$new(
+    total = total_combinations,
+    format = "Processing [:bar] :percent ETA: :eta",
+    clear = FALSE, width = 60
+  )
+  
+  # Store results in a list
+  results <- list()
+  
+  # Perform ANOVA for each combination of categorical and numeric variables
+  for (cat_var in categorical_vars) {
+    for (num_var in numeric_vars) {
+      
+      # Convert categorical variable to factor if not already
+      data[[cat_var]] <- as.factor(data[[cat_var]])
+      
+      # Perform ANOVA
+      anova_model <- aov(data[[num_var]] ~ data[[cat_var]], data = data)
+      
+      # Extract the p-value
+      p_value <- summary(anova_model)[[1]][["Pr(>F)"]][1]
+      
+      # Format p-value: Display "<.0001" if p-value is very small
+      formatted_p_value <- if (p_value < 0.0001) "<.0001" else format.pval(p_value, digits = 4)
+      
+      # Calculate eta-squared
+      eta_squared <- etaSquared(anova_model)[1, "eta.sq"]
+      
+      # Calculate mean of numeric variable for each level of the categorical variable
+      group_means <- tapply(data[[num_var]], data[[cat_var]], mean)
+      
+      # Store results
+      results[[paste(cat_var, num_var, sep = "_")]] <- list(
+        p_value = formatted_p_value,
+        eta_squared = eta_squared,
+        significance = ifelse(p_value < 0.05, "Significant", "Not Significant"),
+        interpretation = ifelse(eta_squared < 0.06, "Weak correlation",
+                                ifelse(eta_squared < 0.14, "Moderate correlation", "Strong correlation")),
+        means = group_means  # Include the means of the numeric variable for each category
+      )
+      
+      # Update progress bar
+      pb$tick()
+    }
+  }
+  
+  return(results)
+}
+
+# Example usage:
+# Assuming 'credit_score' is your dataframe and you have numeric and categorical columns.
+categorical_vars <- c("Credit_Mix", "Payment_of_Min_Amount", "Payment_Behaviour", "Occupation", 
+                      "Credit_Score", "Last_Loan_1", "Last_Loan_2", "Last_Loan_3", "Last_Loan_4",
+                      "Last_Loan_5", "Last_Loan_6", "Last_Loan_7", "Last_Loan_8", "Last_Loan_9")
+numeric_vars <- c("Age", "Annual_Income", "Monthly_Inhand_Salary", "Num_Bank_Accounts", "Num_Credit_Card", 
+                  "Interest_Rate", "Num_of_Loan", "Delay_from_due_date", "Num_of_Delayed_Payment", 
+                  "Changed_Credit_Limit", "Num_Credit_Inquiries", "Outstanding_Debt", "Credit_Utilization_Ratio", 
+                  "Credit_History_Age", "Total_EMI_per_month", "Amount_invested_monthly", "Monthly_Balance")
+
+# Call the function
+result1 <- calc_anova_eta_squared(credit_score, categorical_vars, numeric_vars)
+
+# Print the results (optional)
+print(result1)
+```
+
+
+
+# Numeric and Numeric Correlations - RValue/Pearson Correlation
+```{r}
+# Load necessary library
+if (!require("Hmisc")) install.packages("Hmisc")  # Hmisc package for rcorr function
+library(Hmisc)
+
+# Select only the relevant numeric attributes
+numeric_data <- credit_score[, c("Age", "Annual_Income", "Monthly_Inhand_Salary", 
+                                 "Num_Bank_Accounts", "Num_Credit_Card", "Interest_Rate", 
+                                 "Num_of_Loan", "Delay_from_due_date", "Num_of_Delayed_Payment", 
+                                 "Changed_Credit_Limit", "Num_Credit_Inquiries", 
+                                 "Outstanding_Debt", "Credit_Utilization_Ratio", 
+                                 "Credit_History_Age", "Total_EMI_per_month", 
+                                 "Amount_invested_monthly", "Monthly_Balance")]
+
+# Calculate Pearson correlation coefficients and p-values
+cor_results <- rcorr(as.matrix(numeric_data), type = "pearson")
+
+# Extract correlation coefficients and p-values
+cor_matrix <- cor_results$r  # Pearson correlation coefficients
+p_matrix <- cor_results$P    # p-values
+
+# Interpret and store results
+results2 <- list()  # Rename output list to "results2"
+
+for (i in 1:(ncol(cor_matrix) - 1)) {
+  for (j in (i + 1):ncol(cor_matrix)) {
+    cor_val <- cor_matrix[i, j]
+    p_val <- p_matrix[i, j]
+    
+    # Format p-value: show "<.0001" for very small values, otherwise use four decimals
+    formatted_p_val <- if (p_val < 0.0001) "<.0001" else formatC(p_val, format = "f", digits = 4)
+    
+    # Interpretation based on specified thresholds
+    interpretation <- if (cor_val == 1) {
+      "Perfect positive correlation"
+    } else if (cor_val == -1) {
+      "Perfect negative correlation"
+    } else if (cor_val >= 0.7) {
+      "Strong positive correlation"
+    } else if (cor_val >= 0.3) {
+      "Moderate positive correlation"
+    } else if (cor_val > 0) {
+      "Weak positive correlation"
+    } else if (cor_val > -0.3) {
+      "Weak negative correlation"
+    } else if (cor_val >= -0.7) {
+      "Moderate negative correlation"
+    } else {
+      "Strong negative correlation"
+    }
+    
+    # Significance check based on numeric p-value
+    significance <- ifelse(p_val < 0.05, "Significant", "Not Significant")
+    
+    # If p-value is formatted as "<.0001", set significance to "Significant"
+    if (formatted_p_val == "<.0001") {
+      significance <- "Significant"
+    }
+
+    # Store results in the list
+    results2[[paste(names(numeric_data)[i], names(numeric_data)[j], sep = "_")]] <- list(
+      correlation_coefficient = cor_val,
+      p_value = formatted_p_val,
+      significance = significance,
+      interpretation = interpretation
+    )
+  }
+}
+
+# Print the results (optional)
+print(results2)
+```
+
+
+# Categorical and Categorical Correlations - Phi Coefficient/Cramer's V 
+```{r}
+# Load necessary libraries
+if (!require("vcd")) install.packages("vcd")  # vcd package for Cramer's V
+if (!require("stats")) install.packages("stats")  # For Chi-squared test
+if (!require("lsr")) install.packages("lsr")  # For Cramer's V calculation
+library(vcd)
+library(lsr)
+
+# Define function to calculate p-value, Cramer's V, and significance for categorical variables
+calc_chisq_cramers_v <- function(data, categorical_vars) {
+  
+  # Initialize the progress bar
+  total_combinations <- length(categorical_vars) * (length(categorical_vars) - 1) / 2
+  pb <- progress_bar$new(
+    total = total_combinations,
+    format = "Processing [:bar] :percent ETA: :eta",
+    clear = FALSE, width = 60
+  )
+  
+  # Store results in a list
+  results3 <- list()
+  
+  # Perform Chi-Square Test and Cramer's V for each combination of categorical variables
+  for (i in 1:(length(categorical_vars) - 1)) {
+    for (j in (i + 1):length(categorical_vars)) {
+      
+      cat_var1 <- categorical_vars[i]
+      cat_var2 <- categorical_vars[j]
+      
+      # Create contingency table
+      contingency_table <- table(data[[cat_var1]], data[[cat_var2]])
+      
+      # Perform Chi-Square Test
+      chi_sq_test <- chisq.test(contingency_table)
+      
+      # Extract p-value
+      p_value <- chi_sq_test$p.value
+      
+      # Format p-value: Display "<.0001" if p-value is very small
+      formatted_p_value <- if (p_value < 0.0001) "<.0001" else format.pval(p_value, digits = 4)
+      
+      # Calculate Cramer's V
+      cramers_v <- assocstats(contingency_table)$cramer
+      association_strength <- if (cramers_v < 0.1) {
+        "Weak association"
+      } else if (cramers_v >= 0.1 && cramers_v < 0.3) {
+        "Moderate association"
+      } else if (cramers_v >= 0.3 && cramers_v < 0.5) {
+        "Strong association"
+      } else {
+        "Very strong association"
+      }
+      
+      # Store results in the list without chi-square statistic
+      results3[[paste(cat_var1, cat_var2, sep = "_")]] <- list(
+        p_value = formatted_p_value,
+        significance = ifelse(p_value < 0.05, "Significant", "Not Significant"),
+        cramers_v = cramers_v,
+        association_strength = association_strength
+      )
+      
+      # Update progress bar
+      pb$tick()
+    }
+  }
+  
+  return(results3)
+}
+
+# Example usage:
+# Assuming 'credit_score' is your dataframe with categorical variables
+categorical_vars <- c("Credit_Mix", "Payment_of_Min_Amount", "Payment_Behaviour", "Occupation", 
+                      "Credit_Score", "Last_Loan_1", "Last_Loan_2", "Last_Loan_3", "Last_Loan_4",
+                      "Last_Loan_5", "Last_Loan_6", "Last_Loan_7", "Last_Loan_8", "Last_Loan_9")
+
+# Call the function
+results3 <- calc_chisq_cramers_v(credit_score, categorical_vars)
+
+# Print the results (optional)
+print(results3)
+```
+
+
+#Contigency Table for Categorical and Categorical Attributes
+```{r}
+# Load necessary library
+if (!require("progress")) install.packages("progress")  # For progress bar
+library(progress)
+
+# Define function to calculate contingency tables with totals and percentages
+get_contingency_tables_with_totals <- function(data, categorical_vars) {
+  
+  # Initialize the progress bar
+  total_combinations <- length(categorical_vars) * (length(categorical_vars) - 1) / 2
+  pb <- progress_bar$new(
+    total = total_combinations,
+    format = "Processing [:bar] :percent ETA: :eta",
+    clear = FALSE, width = 60
+  )
+  
+  # Store results in a list
+  contingency_tables_with_totals <- list()
+  
+  # Generate contingency tables for each combination of categorical variables
+  for (i in 1:(length(categorical_vars) - 1)) {
+    for (j in (i + 1):length(categorical_vars)) {
+      
+      cat_var1 <- categorical_vars[i]
+      cat_var2 <- categorical_vars[j]
+      
+      # Create contingency table
+      contingency_table <- table(data[[cat_var1]], data[[cat_var2]])
+      
+      # Calculate totals
+      row_totals <- margin.table(contingency_table, 1)  # Row totals
+      col_totals <- margin.table(contingency_table, 2)  # Column totals
+      grand_total <- sum(contingency_table)             # Overall total
+      
+      # Calculate percentages
+      cell_percentage <- (contingency_table / grand_total) * 100
+      row_percentage <- prop.table(contingency_table, 1) * 100
+      col_percentage <- prop.table(contingency_table, 2) * 100
+      
+      # Create a list to store the table with totals and percentages
+      contingency_tables_with_totals[[paste(cat_var1, cat_var2, sep = "_")]] <- list(
+        contingency_table = contingency_table,
+        row_totals = row_totals,
+        col_totals = col_totals,
+        grand_total = grand_total,
+        cell_percentage = cell_percentage,
+        row_percentage = row_percentage,
+        col_percentage = col_percentage
+      )
+      
+      # Update progress bar
+      pb$tick()
+    }
+  }
+  
+  return(contingency_tables_with_totals)
+}
+
+# Example usage:
+# Assuming 'credit_score' is your dataframe with categorical variables
+categorical_vars <- c("Credit_Mix", "Payment_of_Min_Amount", "Payment_Behaviour", "Occupation", 
+                      "Credit_Score", "Last_Loan_1", "Last_Loan_2", "Last_Loan_3", "Last_Loan_4",
+                      "Last_Loan_5", "Last_Loan_6", "Last_Loan_7", "Last_Loan_8", "Last_Loan_9")
+
+# Call the function
+contingency_tables_with_totals <- get_contingency_tables_with_totals(credit_score, categorical_vars)
+
+# Print the contingency tables with totals and percentages (optional)
+print(contingency_tables_with_totals)
+```
+
+
+# Create dataframe, with replica to excel spreadhseet
+```{r}
+# Load necessary libraries
+if (!require("progress")) install.packages("progress")
+if (!require("lsr")) install.packages("lsr")  # lsr package for etaSquared function
+if (!require("Hmisc")) install.packages("Hmisc")  # Hmisc package for rcorr function
+if (!require("vcd")) install.packages("vcd")  # vcd package for Cramer's V
+if (!require("stats")) install.packages("stats")  # For Chi-squared test
+
+library(progress)
+library(lsr)
+library(Hmisc)
+library(vcd)
+library(stats)
+
+# Define function for ANOVA and Eta-squared
+calc_anova_eta_squared <- function(data, categorical_vars, numeric_vars) {
+  total_combinations <- length(categorical_vars) * length(numeric_vars)
+  pb <- progress_bar$new(total = total_combinations, format = "Processing [:bar] :percent ETA: :eta", clear = FALSE, width = 60)
+  
+  results <- data.frame()
+  
+  for (cat_var in categorical_vars) {
+    for (num_var in numeric_vars) {
+      data[[cat_var]] <- as.factor(data[[cat_var]])
+      anova_model <- aov(data[[num_var]] ~ data[[cat_var]], data = data)
+      p_value <- summary(anova_model)[[1]][["Pr(>F)"]][1]
+      formatted_p_value <- if (p_value < 0.0001) "<.0001" else format.pval(p_value, digits = 4)
+      eta_squared <- etaSquared(anova_model)[1, "eta.sq"]
+      significance <- ifelse(p_value < 0.05, "Significant", "Not Significant")
+      interpretation <- ifelse(eta_squared < 0.06, "Weak correlation", ifelse(eta_squared < 0.14, "Moderate correlation", "Strong correlation"))
+      
+      # Add to the results dataframe
+      results <- rbind(results, data.frame(
+        Attribute1 = cat_var, 
+        Attribute2 = num_var, 
+        p_value = formatted_p_value, 
+        Significance = significance, 
+        Interpretation = interpretation,
+        Eta_Squared = eta_squared, 
+        correlation_coefficient = NA, 
+        cramers_v = NA
+      ))
+      pb$tick()
+    }
+  }
+  return(results)
+}
+
+# Define function for Pearson Correlation
+calc_pearson_correlation <- function(data, numeric_vars) {
+  cor_results <- rcorr(as.matrix(data[, numeric_vars]), type = "pearson")
+  cor_matrix <- cor_results$r
+  p_matrix <- cor_results$P
+  results <- data.frame()
+  
+  for (i in 1:(ncol(cor_matrix) - 1)) {
+    for (j in (i + 1):ncol(cor_matrix)) {
+      cor_val <- cor_matrix[i, j]
+      p_val <- p_matrix[i, j]
+      formatted_p_val <- if (p_val < 0.0001) "<.0001" else formatC(p_val, format = "f", digits = 4)
+      significance <- ifelse(p_val < 0.05, "Significant", "Not Significant")
+      interpretation <- if (cor_val == 1) {
+        "Perfect positive correlation"
+      } else if (cor_val == -1) {
+        "Perfect negative correlation"
+      } else if (cor_val >= 0.7) {
+        "Strong positive correlation"
+      } else if (cor_val >= 0.3) {
+        "Moderate positive correlation"
+      } else if (cor_val > 0) {
+        "Weak positive correlation"
+      } else if (cor_val > -0.3) {
+        "Weak negative correlation"
+      } else if (cor_val >= -0.7) {
+        "Moderate negative correlation"
+      } else {
+        "Strong negative correlation"
+      }
+      
+      # Add to the results dataframe
+      results <- rbind(results, data.frame(
+        Attribute1 = names(data)[i], 
+        Attribute2 = names(data)[j], 
+        p_value = formatted_p_val, 
+        Significance = significance, 
+        Interpretation = interpretation,
+        Eta_Squared = NA, 
+        correlation_coefficient = cor_val, 
+        cramers_v = NA
+      ))
+    }
+  }
+  return(results)
+}
+
+# Define function for Chi-squared and Cramer's V
+calc_chisq_cramers_v <- function(data, categorical_vars) {
+  total_combinations <- length(categorical_vars) * (length(categorical_vars) - 1) / 2
+  pb <- progress_bar$new(total = total_combinations, format = "Processing [:bar] :percent ETA: :eta", clear = FALSE, width = 60)
+  
+  results <- data.frame()
+  
+  for (i in 1:(length(categorical_vars) - 1)) {
+    for (j in (i + 1):length(categorical_vars)) {
+      cat_var1 <- categorical_vars[i]
+      cat_var2 <- categorical_vars[j]
+      contingency_table <- table(data[[cat_var1]], data[[cat_var2]])
+      chi_sq_test <- chisq.test(contingency_table)
+      p_value <- chi_sq_test$p.value
+      formatted_p_value <- if (p_value < 0.0001) "<.0001" else format.pval(p_value, digits = 4)
+      cramers_v <- assocstats(contingency_table)$cramer
+      association_strength <- if (cramers_v < 0.1) {
+        "Weak association"
+      } else if (cramers_v >= 0.1 && cramers_v < 0.3) {
+        "Moderate association"
+      } else if (cramers_v >= 0.3 && cramers_v < 0.5) {
+        "Strong association"
+      } else {
+        "Very strong association"
+      }
+      
+      # Add to the results dataframe
+      results <- rbind(results, data.frame(
+        Attribute1 = cat_var1, 
+        Attribute2 = cat_var2, 
+        p_value = formatted_p_value, 
+        Significance = ifelse(p_value < 0.05, "Significant", "Not Significant"),
+        Interpretation = association_strength,
+        Eta_Squared = NA, 
+        correlation_coefficient = NA, 
+        cramers_v = cramers_v
+      ))
+      pb$tick()
+    }
+  }
+  return(results)
+}
+
+# Example usage
+# Assuming 'credit_score' is your dataframe
+
+categorical_vars <- c("Credit_Mix", "Payment_of_Min_Amount", "Payment_Behaviour", "Occupation", 
+                      "Credit_Score", "Last_Loan_1", "Last_Loan_2", "Last_Loan_3", "Last_Loan_4",
+                      "Last_Loan_5", "Last_Loan_6", "Last_Loan_7", "Last_Loan_8", "Last_Loan_9")
+numeric_vars <- c("Age", "Annual_Income", "Monthly_Inhand_Salary", "Num_Bank_Accounts", "Num_Credit_Card", 
+                  "Interest_Rate", "Num_of_Loan", "Delay_from_due_date", "Num_of_Delayed_Payment", 
+                  "Changed_Credit_Limit", "Num_Credit_Inquiries", "Outstanding_Debt", "Credit_Utilization_Ratio", 
+                  "Credit_History_Age", "Total_EMI_per_month", "Amount_invested_monthly", "Monthly_Balance")
+
+# Call the functions
+result1 <- calc_anova_eta_squared(credit_score, categorical_vars, numeric_vars)
+result2 <- calc_pearson_correlation(credit_score, numeric_vars)
+result3 <- calc_chisq_cramers_v(credit_score, categorical_vars)
+
+# Combine all results
+final_results <- rbind(result1, result2, result3)
+
+# Print the final results
+print(final_results)
+```
+
+```{r}
+write.csv(final_results, "C:\\Users\\jivko\\Documents\\Data Analytics, Big Data, and Predictive Analytics\\Personal Project\\Credit_Score_Multiclass.csv", row.names = FALSE)
+```
+
