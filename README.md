@@ -37,7 +37,8 @@
  #### The following tables were stored to assist in attribute selection in the second branch of this GitHub Repository: 
 - All attributes decision tree variable importance table identified the most influential attributes based on the reduction in impurity at splits:
   ![variable importance decision tree](https://github.com/user-attachments/assets/4f1a4b2f-93a4-46e3-850f-c38ec2c89656)
-- Random forest variable importance table ranked attributes based on the mean decrease in accuracy or Gini index across the ensemble of trees (second image is attributes sorted by Gini):
+- Random forest variable importance table ranked attributes based on the mean decrease in accuracy or Gini index across the ensemble of trees (the image to the right are the attributes sorted by Gini from high to low):
+
   ![variable importance random forest](https://github.com/user-attachments/assets/128204ea-ab1a-4f34-b409-32df7537623b)
 ![variable importance random forest2](https://github.com/user-attachments/assets/5094b9ec-e086-4ec2-b34a-fc5c375428c5)
 
