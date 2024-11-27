@@ -24,7 +24,8 @@
 ### > FILE: 
     - All Attributes Model Development.sas
 - Inserted balanced CSV dataset (*balanced_data_creditscore*) to be used in the decision tree and random forest models
+  - Double checked balanced class distribution
 - Built and evaluated decision tree and random forest models using all attributes.
-- Metrics such as accuracy, sensitivity, specificity, and recall were stored in an Excel sheet for comparison.
+- Metrics such as accuracy, sensitivity, specificity, and recall for decision tree were stored in an Excel sheet for comparison.
 - Generated variable importance tables for both models (decision tree and random forest) to guide feature selection.
 
