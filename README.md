@@ -22,8 +22,7 @@
 
 ## All Attributes Model Development (Using SAS):
 ### > FILE: 
-    - Dataset preperation for DistilBERT.Rmd
-    - Dataset preperation for DistilBERT.pdf (Knitted)
+    - All Attributes Model Development.sas
 - Inserted balanced CSV dataset (*balanced_data_creditscore*) to be used in the decision tree and random forest models
 - Built and evaluated decision tree and random forest models using all attributes.
 - Metrics such as accuracy, sensitivity, specificity, and recall were stored in an Excel sheet for comparison.
