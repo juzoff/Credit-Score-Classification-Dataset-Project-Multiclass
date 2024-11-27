@@ -34,5 +34,9 @@
   - Test set results:
 ![test all](https://github.com/user-attachments/assets/5000743b-99dd-462b-851b-039563c5a6d6)
 
-- Generated variable importance tables for both models (decision tree and random forest) to guide feature selection.
+- > The following tables were stored for attribute selection in the second branch of development.
+- All attributes decision tree variable importance table identified the most influential attributes based on the reduction in impurity at splits:
+  ![variable importance decision tree](https://github.com/user-attachments/assets/4f1a4b2f-93a4-46e3-850f-c38ec2c89656)
+- Random forest variable importance table ranked attributes based on the mean decrease in accuracy or Gini index across the ensemble of trees:
+  
 
