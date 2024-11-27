@@ -26,6 +26,13 @@
 - Inserted balanced CSV dataset (*balanced_data_creditscore*) to be used in the decision tree and random forest models
   - Double checked balanced class distribution
 - Built and evaluated decision tree and random forest models using all attributes.
-- Metrics such as accuracy, sensitivity, specificity, and recall for decision tree were stored in an Excel sheet for comparison.
+- Metrics such as accuracy, sensitivity, specificity, and recall for decision tree training and test set were stored in an Excel sheet for comparison.
+
+  - Training set results:
+![Training all](https://github.com/user-attachments/assets/c820c532-4bc3-4853-95a1-65fcc841a697)
+
+  - Test set results:
+![test all](https://github.com/user-attachments/assets/5000743b-99dd-462b-851b-039563c5a6d6)
+
 - Generated variable importance tables for both models (decision tree and random forest) to guide feature selection.
 
