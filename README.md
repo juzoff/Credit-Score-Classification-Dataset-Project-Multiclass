@@ -18,7 +18,7 @@
 - In a separate R file (*Balancing Class Attribute.Rmd*), analyzed the distribution of the class attribute to identify imbalances.
   - The dataset showed a significant imbalance in the distribution of credit score classes. Specifically, the "Good" class had the lowest representation with 17,828 instances, while the "Poor" and "Standard" classes had much higher counts of 28,998 and 53,174 instances, respectively. This imbalance could lead to biased model predictions, where the model might perform well on the majority classes ("Poor" and "Standard") but struggle to accurately predict the minority class ("Good").
   - To address this, I applied undersampling, a technique where I reduced the number of instances in the overrepresented classes ("Poor" and "Standard") to match the count of the underrepresented "Good" class. After undersampling, all three classes had an equal count of 17,828 instances. This balanced dataset ensured that the model had an equal opportunity to learn patterns from each class, leading to fairer and more generalized predictions across all credit score categories.
-  - Exported balanced dataset to csv file (*balanced_data_creditscore*)
+  - Exported balanced dataset to csv file (*balanced_data_creditscore.csv*)
 
 ## All Attributes Model Development (Using SAS):
 ### > FILE: 
