@@ -1,0 +1,108 @@
+---
+title: "Balancing Class Attribute"
+output: html_document
+date: "2024-11-10"
+---
+
+
+# Opening File 
+
+```{r}
+file_path <- "C:/Users/jivko/Documents/Data Analytics, Big Data, and Predictive Analytics/Personal Project/Credit_Score_Multiclass/Credit_score_cleaned_data.csv"
+```
+```{r}
+credit_score <- read.csv(file_path, header = TRUE)
+```
+
+# Printing head of dataset
+
+```{r}
+head(credit_score)
+```
+
+
+# Seeking count of class attribute
+
+```{r}
+table(credit_score$Credit_Score)
+```
+
+
+# Balancing class attribute - Undersampling "Poor" and "Standard" to 17828
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Define the target count based on the minority class "Good"
+target_count <- sum(credit_score$Credit_Score == "Good")  # 17,828
+
+# Undersample Poor and Standard classes to match the target count
+undersampled_poor <- credit_score[credit_score$Credit_Score == "Poor", ][sample(nrow(credit_score[credit_score$Credit_Score == "Poor", ]), target_count), ]
+undersampled_standard <- credit_score[credit_score$Credit_Score == "Standard", ][sample(nrow(credit_score[credit_score$Credit_Score == "Standard", ]), target_count), ]
+
+# Combine the balanced dataset
+balanced_data <- bind_rows(
+  credit_score[credit_score$Credit_Score == "Good", ],  # Keep all "Good" instances
+  undersampled_poor,
+  undersampled_standard
+)
+
+# Check the new class distribution
+new_class_dist <- table(balanced_data$Credit_Score)
+print("New Class Distribution after Balancing:")
+print(new_class_dist)
+```
+
+# Checking Strucutre of Dataset
+
+```{r}
+str(credit_score)
+```
+
+# Exporting to CSV File 
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+
+# Set seed for reproducibility
+set.seed(123)
+
+# Define the target count based on the minority class "Good"
+target_count <- sum(credit_score$Credit_Score == "Good")  # 17,828
+
+# Undersample Poor and Standard classes to match the target count
+undersampled_poor <- credit_score[credit_score$Credit_Score == "Poor", ][sample(nrow(credit_score[credit_score$Credit_Score == "Poor", ]), target_count), ]
+undersampled_standard <- credit_score[credit_score$Credit_Score == "Standard", ][sample(nrow(credit_score[credit_score$Credit_Score == "Standard", ]), target_count), ]
+
+# Combine the balanced dataset
+balanced_data <- bind_rows(
+  credit_score[credit_score$Credit_Score == "Good", ],  # Keep all "Good" instances
+  undersampled_poor,
+  undersampled_standard
+)
+
+# Check the new class distribution
+new_class_dist <- table(balanced_data$Credit_Score)
+print("New Class Distribution after Balancing:")
+print(new_class_dist)
+
+# Export the balanced dataset to a CSV file
+output_path <- "C:/Users/jivko/Documents/Data Analytics, Big Data, and Predictive Analytics/Personal Project/Credit_Score_Multiclass/balanced_data_creditscore.csv"
+write.csv(balanced_data, file = output_path, row.names = FALSE)
+
+print(paste("Balanced dataset exported to:", output_path))
+```
+
+
+
+
+
+
+
+
+
