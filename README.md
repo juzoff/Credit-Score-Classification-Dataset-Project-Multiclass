@@ -6,6 +6,7 @@
     - Credit_Score - Data Preperation - Correlation Strength.pdf (Knitted)
     - Credit_Score_Multiclass_CORRELATIONAL ANALYSIS.csv
     - Balancing Class Attribute.Rmd
+    - Balancing Class Attribute.pdf (Knitted)
 #### Highlights:
 - Explored and cleaned the dataset, handling/checking missing values.
 - Calculated correlations between attributes using various statistical methods:
