@@ -3,6 +3,7 @@
 ## Selected Attributes Model - Strategy/Logic:
 ### > FILE: 
     - Selected Attributes Model - Strategy-Logic.pdf
+    - Credit_Score - Correlation Strength - Numeric and Categorical.pdf (Knitted)
 #### Highlights:
 - Developed a strategy to select attributes for the selected attributes model:
   - Assessed the relationship between each attribute and the target variable, using .
