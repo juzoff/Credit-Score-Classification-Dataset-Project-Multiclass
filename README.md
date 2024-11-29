@@ -28,14 +28,10 @@
 <img src="https://github.com/user-attachments/assets/e8fb65fe-3862-452a-8d1a-9865ab9d791a" width="600" />
 
 
-
-## *>Branch 3<*
-### Selected Attributes Model Deployment:
-- Created a decision tree model with selected attributes (*see Branch 2 for removed attributes in this model*), achieving superior performance compared to the all-attributes model.
-### Hyperparameter Tuning:
-- Experimented with different max depth values for decision trees.
-- Identified an optimal depth of 18, which improved the model's performance.
-### Feature Engineering:
+## Feature Engineering:
+### > FILE: 
+    - Feature Engineering.sas
+#### Highlights:
 - Binned numeric attributes using domain-specific logic, enhancing the performance of both the all-attributes and selected-attributes models.
 - Documented the binning logic for reproducibility.
 
