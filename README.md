@@ -13,6 +13,13 @@
 <img src="https://github.com/user-attachments/assets/c820c532-4bc3-4853-95a1-65fcc841a697" width="650" />
 <img src="https://github.com/user-attachments/assets/5000743b-99dd-462b-851b-039563c5a6d6" width="650" />
 
+## Hyperparameter Tuning:
+### > FILE: 
+    - Hyperparameter Tuning.sas
+#### Highlights:
+- Experimented with different max depth values for the All Attributes and Selected Attributes Decision Tree models
+- Identified an optimal max depth of 18, which improved the model's performance for both model 
+
 
 ## *>Branch 3<*
 ### Selected Attributes Model Deployment:
