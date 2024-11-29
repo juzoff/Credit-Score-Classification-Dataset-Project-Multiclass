@@ -1,8 +1,8 @@
 # Branch 3
 
-## Selected Attributes Model Deployment:
+## Selected Attributes Model Development:
 ### > FILE: 
-    - Selected Attributes Model.sas
+    - Selected Attributes Model Development.sas
 #### Highlights:
 - Created a decision tree model with selected attributes, achieving superior performance compared to the all-attributes model.
 
