@@ -23,6 +23,7 @@
 ## All Attributes Model Development (Using SAS):
 ### > FILE: 
     - All Attributes Model Development.sas
+    - All Attributes - Metrics and Visuals.xlsx
 - Inserted balanced CSV dataset (*balanced_data_creditscore*) to be used in the decision tree and random forest models
   - Double checked balanced class distribution
 - Built and evaluated decision tree and random forest models using all attributes
@@ -34,6 +35,10 @@
 
   - Test set results:
 ![test all](https://github.com/user-attachments/assets/5000743b-99dd-462b-851b-039563c5a6d6)
+
+![All Attributes - Accuracy](https://github.com/user-attachments/assets/5fe3d00f-34a1-4de8-bb93-1e25841154ac)
+![All Attributes - Metrics and Visuals](https://github.com/user-attachments/assets/3baade3b-5e79-4cf8-a690-879a16b2a305)
+
 
  #### The following tables were stored to assist in attribute selection in the second branch of this GitHub Repository: 
 - All attributes decision tree variable importance table identified the most influential attributes based on the reduction in impurity at splits:
