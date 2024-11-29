@@ -26,6 +26,7 @@
 - Inserted balanced CSV dataset (*balanced_data_creditscore*) to be used in the decision tree and random forest models
   - Double checked balanced class distribution
 - Built and evaluated decision tree and random forest models using all attributes
+  - Used a maxdepth of 15
 - Metrics such as accuracy, sensitivity, specificity, and recall for decision tree training and test set were stored in an Excel sheet for comparison
 
   - Training set results:
