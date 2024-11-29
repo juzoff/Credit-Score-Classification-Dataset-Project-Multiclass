@@ -5,7 +5,7 @@
     - Selected Attributes Model Development.sas
 #### Highlights:
 - Created a decision tree model with selected attributes, achieving superior performance compared to the all-attributes model
-  - Used a max depth of 15
+  - Used a max depth of 15, to ensure consistency with All Attributes Model 
 ![SELECTED training](https://github.com/user-attachments/assets/98841e98-8500-44d3-9345-d172d5df9c0e)
 ![SELECTED TEST](https://github.com/user-attachments/assets/d7f5aac9-4028-447c-b0c7-bceb3f46bd67)
 
