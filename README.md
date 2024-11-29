@@ -35,4 +35,13 @@
 - Binned numeric attributes using domain-specific logic, enhancing the performance of both the all-attributes and selected-attributes models
 - Documented the binning logic for reproducibility
 
-![BINNED](https://github.com/user-attachments/assets/5bbc1bfe-b166-4ac0-9fc1-c640d9fee31f)
+![BINNED accuracy](https://github.com/user-attachments/assets/ac36dde3-205f-4493-b984-07b51e794ea4)
+
+<img src="https://github.com/user-attachments/assets/f6df349d-2e5f-4e1f-9b9f-78f0db5615f1" width="600" />
+
+<img src="https://github.com/user-attachments/assets/e04448c2-9b96-43f6-a420-bfeb7f61c65f" width="600" />
+
+<img src="https://github.com/user-attachments/assets/22619db9-0d29-47fb-b069-ee4fcdfb471e" width="600" />
+
+
+
