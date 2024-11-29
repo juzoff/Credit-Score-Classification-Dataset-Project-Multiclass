@@ -9,7 +9,9 @@
 ![SELECTED training](https://github.com/user-attachments/assets/98841e98-8500-44d3-9345-d172d5df9c0e)
 ![SELECTED TEST](https://github.com/user-attachments/assets/d7f5aac9-4028-447c-b0c7-bceb3f46bd67)
 
-
++ All Attributes Model results are seen below for comparison (*as seen in Branch 1*)
+<img src="https://github.com/user-attachments/assets/c820c532-4bc3-4853-95a1-65fcc841a697" width="600" />
+<img src="https://github.com/user-attachments/assets/5000743b-99dd-462b-851b-039563c5a6d6" width="600" />
 
 
 ## *>Branch 3<*
