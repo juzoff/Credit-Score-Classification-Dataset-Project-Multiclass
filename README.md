@@ -33,5 +33,5 @@
     - Feature Engineering.sas
 #### Highlights:
 - Binned numeric attributes using domain-specific logic, enhancing the performance of both the all-attributes and selected-attributes models.
-- Documented the binning logic for reproducibility.
+- Documented the binning logic for reproducibility
 
