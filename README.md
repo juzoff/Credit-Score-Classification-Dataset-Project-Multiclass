@@ -32,6 +32,7 @@
 ### > FILE: 
     - Feature Engineering.sas
 #### Highlights:
-- Binned numeric attributes using domain-specific logic, enhancing the performance of both the all-attributes and selected-attributes models.
+- Binned numeric attributes using domain-specific logic, enhancing the performance of both the all-attributes and selected-attributes models
 - Documented the binning logic for reproducibility
 
+![BINNED](https://github.com/user-attachments/assets/5bbc1bfe-b166-4ac0-9fc1-c640d9fee31f)
