@@ -19,13 +19,13 @@
 #### Highlights:
 - Experimented with different max depth values for the All Attributes and Selected Attributes Decision Tree models
 - Identified an optimal max depth of 18, which improved the model's performance for both models (All Attributes and Selected Attributes) 
-![Accuracy](https://github.com/user-attachments/assets/7ef3fd75-e744-469c-a9a1-0ae227d007ee)
+![Accuracy](https://github.com/user-attachments/assets/d830bdef-9a02-4f27-bbda-49d286d1576c)
 
-<img src="https://github.com/user-attachments/assets/0c87a54e-8ad4-4f00-82d8-b98e8a3e364b" width="600" />
+<img src="https://github.com/user-attachments/assets/a1a24890-3b13-463b-81db-1d2a1abdd62a" width="600" />
 
-<img src="https://github.com/user-attachments/assets/b0f65e0a-a029-40bf-a52a-dca8edf1aed1" width="600" />
+<img src="https://github.com/user-attachments/assets/c78e54cc-f789-47bb-a035-cb6d2cf3c2d0" width="600" />
 
-<img src="https://github.com/user-attachments/assets/e8fb65fe-3862-452a-8d1a-9865ab9d791a" width="600" />
+<img src="https://github.com/user-attachments/assets/6a9dd71a-a8e9-492b-87ef-da59e1112b87" width="600" />
 
 
 ## Feature Engineering:
