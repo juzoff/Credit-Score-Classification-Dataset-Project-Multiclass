@@ -1,0 +1,35 @@
+Customer_ID,Age,Credit_History_Age,Annual_Income,Delay_from_due_date,Interest_Rate,Num_Bank_Accounts,Num_Credit_Card,Num_of_Delayed_Payment,Outstanding_Debt,Changed_Credit_Limit,Monthly_Inhand_Salary,Credit_Mix,Occupation,Last_Loan_1,Last_Loan_2,Last_Loan_3,Last_Loan_4,Last_Loan_5,Payment_of_Min_Amount,Num_Credit_Inquiries,Age_Binned,Credit_History_Age_Binned,Annual_Income_Binned,Delay_Binned,Interest_Rate_Binned,Bank_Accounts_Binned,Credit_Cards_Binned,Num_Credit_Inquiries_Binned,Delayed_Payment_Binned,Debt_Binned,Credit_Limit_Change_Binned,Inhand_Salary_Binned,_Node_,_Leaf_,_WARN_,P_Credit_ScoreGood,P_Credit_ScorePoor,P_Credit_ScoreStanda,Predicted_Credit_Score
+CUS_myvq,29,24,45000,3,8,4,3,1,1500,2,3200,Standard,Developer,Yes,No,No,No,Yes,Yes,2,25-40,Short,Med,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Small In,Med,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_3y1y,40,96,80000,0,12,3,6,0,2000,10,6500,Bad,Writer,No,No,Yes,Yes,No,No,5,25-40,Moderate,Hig,Slight Delay,Mod,Mod,Man,Mode,None,Mod,Moderate,Hig,408,80,,0,0.95652174,0.043478261,Poor
+CUS_nr4q,22,6,22000,15,18,2,1,4,500,-3,900,Bad,Accountant,No,No,No,No,Yes,Yes,0,18-24,Very Short,Low,Moderate Dela,Hig,Few,Few,None,Mode,Low,Decrease,Low,1136,343,,0,1,0,Poor
+CUS_321i,55,180,120000,0,7,6,8,0,2500,15,11000,Good,Doctor,Yes,Yes,Yes,Yes,No,No,4,41-60,Long,Ver,Slight Delay,Mod,Man,Man,Mode,None,Mod,Moderate,Hig,205,22,,0.96428571,0,0.035714286,Good
+CUS_cl8v,35,72,60000,2,5,3,4,2,1800,8,5000,Good,Mechanic,No,No,No,Yes,No,Yes,3,25-40,Moderate,Med,Slight Delay,Low,Mod,Mod,Low,Low,Mod,Moderate,Med,3979,1955,,0.875,0,0.125,Good
+CUS_64c0,32,48,50000,2,10,4,5,1,1800,5,3500,Good,Engineer,No,Yes,No,No,Yes,No,3,25-40,Short,Med,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Small In,Med,1641,586,,1,0,0,Good
+CUS_3zme,27,12,30000,5,15,3,2,3,1000,0,2300,Bad,Accountant,No,No,No,Yes,Yes,Yes,1,25-40,Very Short,Med,Slight Delay,Mod,Mod,Few,Low,Low,Mod,Small In,Med,131,14,,0,0.90625,0.09375,Poor
+CUS_w3ws,45,120,90000,1,8,5,7,1,2200,12,7500,Standard,Architect,Yes,No,Yes,Yes,No,Yes,4,41-60,Moderate,Hig,Slight Delay,Mod,Mod,Man,Mode,Low,Mod,Moderate,Hig,3879,1855,,0.090909091,0.054545455,0.85454545,Stan
+CUS_9s7w,50,144,110000,0,6,6,6,0,2500,14,9000,Good,Lawyer,Yes,Yes,No,No,Yes,No,5,41-60,Long,Hig,Slight Delay,Mod,Man,Man,Mode,None,Mod,Moderate,Hig,911,255,,0.94252874,0.011494253,0.045977011,Good
+CUS_uije,21,6,25000,12,20,2,2,5,800,-1,1200,Bad,Teacher,No,No,No,No,Yes,Yes,0,18-24,Very Short,Low,Moderate Dela,Hig,Few,Few,None,Mode,Low,Decrease,Med,2944,1274,,0,0.078431373,0.92156863,Stan
+CUS_cmy7,33,36,48000,4,9,3,4,2,1700,6,3400,Standard,Journalist,No,Yes,No,No,No,No,2,25-40,Short,Med,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Moderate,Med,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_9h9g,38,72,70000,1,7,3,5,1,2000,8,5800,Good,Developer,No,No,Yes,Yes,No,Yes,3,25-40,Moderate,Hig,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Moderate,Hig,3976,1952,,0.77142857,0.085714286,0.14285714,Good
+CUS_9re9,26,18,31000,10,18,4,3,3,1300,3,2500,Bad,Musician,No,No,No,Yes,No,No,1,25-40,Short,Med,Moderate Dela,Hig,Mod,Mod,Low,Low,Mod,Small In,Med,413,83,,0.060606061,0.03030303,0.90909091,Stan
+CUS_k4ht,41,132,85000,0,5,6,5,0,2600,11,7000,Good,Manager,Yes,No,No,Yes,No,Yes,5,41-60,Long,Hig,Slight Delay,Low,Man,Mod,Mode,None,Mod,Moderate,Hig,3730,1743,,0,0.71428571,0.28571429,Poor
+CUS_wkfo,55,180,125000,0,7,6,8,0,2800,15,11500,Good,Doctor,Yes,Yes,Yes,Yes,No,No,4,41-60,Long,Ver,Slight Delay,Mod,Man,Man,Mode,None,Mod,Moderate,Hig,205,22,,0.96428571,0,0.035714286,Good
+CUS_b22k,29,24,45000,3,8,4,3,1,1500,2,3200,Standard,Developer,Yes,No,No,No,Yes,Yes,2,25-40,Short,Med,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Small In,Med,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_x4tm,44,84,95000,2,9,5,6,1,2300,10,6800,Good,Engineer,No,Yes,No,No,Yes,No,3,41-60,Moderate,Hig,Slight Delay,Mod,Mod,Man,Low,Low,Mod,Moderate,Hig,2705,1139,,0.96774194,0,0.032258065,Good
+CUS_nfvv,22,6,22000,15,18,2,1,4,500,-3,900,Bad,Accountant,No,No,No,No,Yes,Yes,0,18-24,Very Short,Low,Moderate Dela,Hig,Few,Few,None,Mode,Low,Decrease,Low,1136,343,,0,1,0,Poor
+CUS_hz0y,40,96,80000,0,12,3,6,0,2000,10,6500,Bad,Writer,No,No,Yes,Yes,No,No,5,25-40,Moderate,Hig,Slight Delay,Mod,Mod,Man,Mode,None,Mod,Moderate,Hig,408,80,,0,0.95652174,0.043478261,Poor
+CUS_ryp8,30,60,55000,2,10,4,5,2,1900,7,3600,Standard,Teacher,No,Yes,Yes,No,Yes,Yes,2,25-40,Short,Med,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Moderate,Med,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_cmj7,24,12,27000,11,19,3,3,3,1200,0,2000,Bad,Media_Mana,No,No,No,No,No,No,1,18-24,Very Short,Low,Moderate Dela,Hig,Mod,Mod,Low,Low,Mod,Small In,Med,413,83,,0.060606061,0.03030303,0.90909091,Stan
+CUS_ypwp,48,144,100000,0,6,6,7,0,2500,13,8500,Good,Lawyer,Yes,No,No,Yes,No,Yes,4,41-60,Long,Hig,Slight Delay,Mod,Man,Man,Mode,None,Mod,Moderate,Hig,911,255,,0.94252874,0.011494253,0.045977011,Good
+CUS_dbcx,35,72,60000,2,5,3,4,2,1800,8,5000,Good,Mechanic,No,No,No,Yes,No,Yes,3,25-40,Moderate,Med,Slight Delay,Low,Mod,Mod,Low,Low,Mod,Moderate,Med,3979,1955,,0.875,0,0.125,Good
+CUS_yixh,37,96,75000,1,8,4,6,1,2100,9,6100,Standard,Developer,Yes,No,Yes,No,No,No,2,25-40,Moderate,Hig,Slight Delay,Mod,Mod,Man,Low,Low,Mod,Moderate,Hig,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_59ba,31,36,47000,3,11,3,4,1,1600,6,3300,Standard,Architect,No,No,No,Yes,No,Yes,2,25-40,Short,Med,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Moderate,Med,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_ylut,28,24,44000,6,14,2,3,2,1400,4,3100,Bad,Journalist,No,Yes,No,No,Yes,No,1,25-40,Short,Med,Slight Delay,Mod,Few,Mod,Low,Low,Mod,Small In,Med,408,80,,0,0.95652174,0.043478261,Poor
+CUS_rw38,46,120,92000,0,7,5,6,0,2400,12,6900,Good,Scientist,Yes,No,Yes,Yes,No,Yes,3,41-60,Moderate,Hig,Slight Delay,Mod,Mod,Man,Low,None,Mod,Moderate,Hig,3827,1811,,0,1,0,Poor
+CUS_5yt5,23,6,25000,14,21,2,2,4,700,-2,1100,Bad,Accountant,No,No,No,No,Yes,No,0,18-24,Very Short,Low,Moderate Dela,Hig,Few,Few,None,Mode,Low,Decrease,Med,1136,343,,0,1,0,Poor
+CUS_ga21,49,144,95000,0,6,6,7,0,2700,13,8800,Good,Doctor,Yes,Yes,Yes,No,Yes,Yes,4,41-60,Long,Hig,Slight Delay,Mod,Man,Man,Mode,None,Mod,Moderate,Hig,205,22,,0.96428571,0,0.035714286,Good
+CUS_isd2,36,84,63000,1,8,4,5,1,1900,8,5200,Standard,Teacher,No,Yes,No,Yes,No,Yes,3,25-40,Moderate,Med,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Moderate,Hig,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_rmus,19,3,20000,16,22,1,1,5,400,-4,800,Bad,Mechanic,No,No,No,No,Yes,Yes,0,18-24,Very Short,Low,Moderate Dela,Hig,Few,Few,None,Mode,Low,Decrease,Low,2014,765,,0.5,0.5,0,Good
+CUS_6ry5,39,96,72000,2,9,4,5,2,1800,9,5500,Standard,Engineer,No,No,No,Yes,No,No,2,25-40,Moderate,Hig,Slight Delay,Mod,Mod,Mod,Low,Low,Mod,Moderate,Hig,230,28,,0.032786885,0.049180328,0.91803279,Stan
+CUS_c753,51,132,89000,1,8,5,6,1,2300,10,6700,Good,Entreprene,Yes,No,No,No,No,Yes,4,41-60,Long,Hig,Slight Delay,Mod,Mod,Man,Mode,Low,Mod,Moderate,Hig,3489,1577,,0.73809524,0.11904762,0.14285714,Good
+CUS_ib96,42,108,86000,0,7,5,5,0,2200,11,6400,Good,Manager,No,Yes,Yes,Yes,Yes,Yes,2,41-60,Moderate,Hig,Slight Delay,Mod,Mod,Mod,Low,None,Mod,Moderate,Hig,3729,1742,,0.70588235,0,0.29411765,Good
