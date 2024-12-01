@@ -3,8 +3,8 @@
 ## Prediction, Scoring and Implementation:
 ### > FILE: 
     - Credit Score - Prediction, Scoring and Implementation.sas
-    - New_Data
-    - scored_new_data_creditscore
+    - New_Data.csv
+    - scored_new_data_creditscore.csv
 #### Highlights:
 - Developed SAS code to import new datasets and implement custom binning for critical attributes, ensuring consistency with the training dataset's preprocessing steps
 - Integrated the scoring logic of the selected-attributes decision tree model for applying predictions to new datasets
