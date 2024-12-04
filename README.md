@@ -26,6 +26,7 @@
     - All Attributes - Metrics and Visuals.xlsx
 - Inserted balanced CSV dataset (*balanced_data_creditscore*) to be used in the decision tree and random forest models
   - Double checked balanced class distribution
+- I initially started with a max depth of 10 for the decision tree model, which resulted in an accuracy of 0.8475 on the training set and 0.8254 on the test set. However, recognizing the importance of adjusting the max depth for larger datasets, I gradually increased it. After experimenting with different values, I settled on a max depth of 15, which provided a more appropriate starting benchmark for the model's performance
 - Built and evaluated decision tree and random forest models using all attributes
   - Used a maxdepth of 15
 - Metrics such as accuracy, sensitivity, specificity, and recall for decision tree training and test set were stored in an Excel sheet for comparison
