@@ -1,5 +1,15 @@
 # Branch 1
 
+## Baseline Decision Tree Model: Initial Performance Analysis:
+### > FILE: 
+    - Baseline Model.sas
+#### Highlights:
+- A baseline decision tree model was created without balancing the class distribution, serving as a starting point for further model refinement.
+- The model was trained with a maximum depth of 10 to avoid overfitting while maintaining interpretability.
+    - Performance Metrics:
+        - Training Accuracy: 0.8019
+        - Test Accuracy: 0.7458
+
 ## Data Preparation and Correlation Analysis (Using R):
 ### > FILE: 
     - Credit_Score - Data Preperation - Correlation Strength.Rmd
