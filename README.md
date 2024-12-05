@@ -12,6 +12,9 @@
 - Developed SAS code to apply the selected-attributes decision tree model to new datasets, incorporating binning criteria for accurate predictions
 - Successfully generated predictions for new data records and provided an option to save the scored results in a CSV file for external use
 
+![predictions](https://github.com/user-attachments/assets/de6b3f70-92be-46cb-9a82-8e4adba523d3)
+
+
 ## Insights Report on Selected Attributes:
 ### > FILE:  
     - d
