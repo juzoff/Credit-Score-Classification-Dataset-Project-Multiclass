@@ -77,3 +77,13 @@ Throughout the project, I focused on improving model accuracy, interpretability,
 # Assignment Outcome Visualizations: Comparison of Baseline Model vs Final Model
 ---
 ![final acc](https://github.com/user-attachments/assets/9cb4e984-eee7-46b0-a6b3-b271e66099d1)
+
+<img src="https://github.com/user-attachments/assets/591272bc-ff57-4625-b464-1d8bb91aaa93" width="600" />
+
+<img src="https://github.com/user-attachments/assets/08ac934f-dc44-4f5b-ab9d-d3e449efc4be" width="600" />
+
+<img src="https://github.com/user-attachments/assets/a60cb414-b56d-463c-bd57-ed381bc456e0" width="600" />
+
+
+
+
