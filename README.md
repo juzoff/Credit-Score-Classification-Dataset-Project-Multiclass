@@ -10,6 +10,9 @@
         - Training Accuracy: 0.8176
         - Test Accuracy: 0.8113
 
+<img src="https://github.com/user-attachments/assets/1cb235d0-05cc-4a02-8c4f-dbac11f279f4" width="650" />
+<img src="https://github.com/user-attachments/assets/2817706e-1a48-4cc9-b25c-25ee6ee95f4f" width="650" />
+
 ## Data Preparation and Correlation Analysis (Using R):
 ### > FILE: 
     - Credit_Score - Data Preperation - Correlation Strength.Rmd
