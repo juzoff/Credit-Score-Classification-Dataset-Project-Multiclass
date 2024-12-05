@@ -73,3 +73,7 @@ Throughout the project, I focused on improving model accuracy, interpretability,
 ### Scoring and Prediction:
 - Developed SAS code to apply the selected-attributes decision tree model to new datasets, incorporating binning criteria for accurate predictions
 
+
+# Assignment Outcome Visualizations: Comparison of Baseline Model vs Final Model
+---
+![final acc](https://github.com/user-attachments/assets/9cb4e984-eee7-46b0-a6b3-b271e66099d1)
