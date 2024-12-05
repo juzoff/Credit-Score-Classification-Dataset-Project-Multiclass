@@ -7,6 +7,9 @@ Throughout the project, I focused on improving model accuracy, interpretability,
 
 # Branches: 
 ## *>Branch 1<*
+### Baseline Decision Tree Model: Initial Performance Analysis:
+- A baseline decision tree model was created without balancing the class distribution, serving as a starting point for further model refinement.
+- The model was trained with a maximum depth of 10 to avoid overfitting while maintaining interpretability.
 ### Data Preparation and Correlation Analysis (Using R):
 - Explored and cleaned the dataset, handling missing values
 - Calculated correlations between attributes using various statistical methods:
