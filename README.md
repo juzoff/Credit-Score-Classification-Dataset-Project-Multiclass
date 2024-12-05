@@ -5,6 +5,37 @@ In this project, I developed a machine learning system designed to automate the 
 
 Throughout the project, I focused on improving model accuracy, interpretability, and scalability by systematically exploring the dataset, conducting thorough correlation analysis, selecting relevant features, and fine-tuning the model for optimal performance. The outcome was an automated system capable of efficiently predicting the creditworthiness of customers, offering significant improvements in both operational efficiency and the quality of financial decision-making.
 
+# Assignment Outcome: Comparison of Baseline Model vs Final Model
+---
+| Model                                         | Set     | Accuracy |
+|-----------------------------------------------|---------|----------|
+| **BASELINE MODEL - All Attributes - 10 Max Depth** | Training | 0.8176   |
+| **BASELINE MODEL - All Attributes - 10 Max Depth** | Test     | 0.8113   |
+| **FINAL MODEL - BINNED - Selected Attributes - 18 Max Depth**  | Training | 0.9103   |
+| **FINAL MODEL - BINNED - Selected Attributes - 18 Max Depth**  | Test     | 0.8487   |
+
+| Model                                                              | Set     | Accuracy | Sensitivity | Specificity | Precision |
+|--------------------------------------------------------------------|---------|----------|-------------|-------------|-----------|
+| **BASELINE MODEL - Good - Training Set - All Attributes - 10 Max Depth** | Training |          | 0.6989      | 0.8969      | 0.5953    |
+| **BASELINE MODEL - Good - Test Set - All Attributes - 10 Max Depth**    | Test     |          | 0.6904      | 0.8926      | 0.5823    |
+| **FINAL MODEL - BINNED - Good - Training Set - Selected Attributes - 18 Max Depth**  | Training |          | 0.9337      | 0.9281      | 0.8666    |
+| **FINAL MODEL - BINNED - Good - Test Set - Selected Attributes - 18 Max Depth**      | Test     |          | 0.8656      | 0.8913      | 0.7992    |
+
+| Model                                                              | Set     | Accuracy | Sensitivity | Specificity | Precision |
+|--------------------------------------------------------------------|---------|----------|-------------|-------------|-----------|
+| **BASELINE MODEL - Poor - Training Set - All Attributes - 10 Max Depth** | Training |          | 0.7242      | 0.8875      | 0.7244    |
+| **BASELINE MODEL - Poor - Test Set - All Attributes - 10 Max Depth**    | Test     |          | 0.7203      | 0.8821      | 0.7139    |
+| **FINAL MODEL - BINNED - Poor - Training Set - Selected Attributes - 18 Max Depth**  | Training |          | 0.9186      | 0.9260      | 0.8613    |
+| **FINAL MODEL - BINNED - Poor - Test Set - Selected Attributes - 18 Max Depth**      | Test     |          | 0.8381      | 0.8807      | 0.7784    |
+
+| Model                                                                 | Set     | Accuracy | Sensitivity | Specificity | Precision |
+|-----------------------------------------------------------------------|---------|----------|-------------|-------------|-----------|
+| **BASELINE MODEL Standard - Training Set - All Attributes - 10 Max Depth** | Training |          | 0.7367      | 0.7671      | 0.7823    |
+| **BASELINE MODEL - Standard - Test Set - All Attributes - 10 Max Depth**    | Test     |          | 0.7240      | 0.7628      | 0.7761    |
+| **FINAL MODEL - BINNED - Standard - Training Set - Selected Attributes - 18 Max Depth** | Training |          | 0.7440      | 0.9440      | 0.8691    |
+| **FINAL MODEL - BINNED - Standard - Test Set - Selected Attributes - 18 Max Depth**    | Test     |          | 0.6154      | 0.8875      | 0.7323    |
+
+
 # Branches: 
 ## *>Branch 1<*
 ### Baseline Decision Tree Model: Initial Performance Analysis:
@@ -42,7 +73,3 @@ Throughout the project, I focused on improving model accuracy, interpretability,
 ### Scoring and Prediction:
 - Developed SAS code to apply the selected-attributes decision tree model to new datasets, incorporating binning criteria for accurate predictions
 
-
-# Assignment Outcome: Comparison of Baseline vs Final Models
-The below section presents a comparison of
----
