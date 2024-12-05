@@ -7,28 +7,28 @@ Throughout the project, I focused on improving model accuracy, interpretability,
 
 # Assignment Outcome: Comparison of Baseline Model vs Final Model
 ---
-| Model                                         | Set     | Accuracy |
+| Model Accuracy                                        | Set     | Accuracy |
 |-----------------------------------------------|---------|----------|
 | **BASELINE MODEL - All Attributes - 10 Max Depth** | Training | 0.8176   |
 | **BASELINE MODEL - All Attributes - 10 Max Depth** | Test     | 0.8113   |
 | **FINAL MODEL - BINNED - Selected Attributes - 18 Max Depth**  | Training | 0.9103   |
 | **FINAL MODEL - BINNED - Selected Attributes - 18 Max Depth**  | Test     | 0.8487   |
 
-| Model                                                              | Set     | Accuracy | Sensitivity | Specificity | Precision |
+| Model Metrics (Good)                                                              | Set     | Accuracy | Sensitivity | Specificity | Precision |
 |--------------------------------------------------------------------|---------|----------|-------------|-------------|-----------|
 | **BASELINE MODEL - Good - Training Set - All Attributes - 10 Max Depth** | Training |          | 0.6989      | 0.8969      | 0.5953    |
 | **BASELINE MODEL - Good - Test Set - All Attributes - 10 Max Depth**    | Test     |          | 0.6904      | 0.8926      | 0.5823    |
 | **FINAL MODEL - BINNED - Good - Training Set - Selected Attributes - 18 Max Depth**  | Training |          | 0.9337      | 0.9281      | 0.8666    |
 | **FINAL MODEL - BINNED - Good - Test Set - Selected Attributes - 18 Max Depth**      | Test     |          | 0.8656      | 0.8913      | 0.7992    |
 
-| Model                                                              | Set     | Accuracy | Sensitivity | Specificity | Precision |
+| Model Metrics (Poor)                                                              | Set     | Accuracy | Sensitivity | Specificity | Precision |
 |--------------------------------------------------------------------|---------|----------|-------------|-------------|-----------|
 | **BASELINE MODEL - Poor - Training Set - All Attributes - 10 Max Depth** | Training |          | 0.7242      | 0.8875      | 0.7244    |
 | **BASELINE MODEL - Poor - Test Set - All Attributes - 10 Max Depth**    | Test     |          | 0.7203      | 0.8821      | 0.7139    |
 | **FINAL MODEL - BINNED - Poor - Training Set - Selected Attributes - 18 Max Depth**  | Training |          | 0.9186      | 0.9260      | 0.8613    |
 | **FINAL MODEL - BINNED - Poor - Test Set - Selected Attributes - 18 Max Depth**      | Test     |          | 0.8381      | 0.8807      | 0.7784    |
 
-| Model                                                                 | Set     | Accuracy | Sensitivity | Specificity | Precision |
+| Model Metrics (Standard)                                                                | Set     | Accuracy | Sensitivity | Specificity | Precision |
 |-----------------------------------------------------------------------|---------|----------|-------------|-------------|-----------|
 | **BASELINE MODEL Standard - Training Set - All Attributes - 10 Max Depth** | Training |          | 0.7367      | 0.7671      | 0.7823    |
 | **BASELINE MODEL - Standard - Test Set - All Attributes - 10 Max Depth**    | Test     |          | 0.7240      | 0.7628      | 0.7761    |
