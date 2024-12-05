@@ -41,3 +41,8 @@ Throughout the project, I focused on improving model accuracy, interpretability,
 - Included insights derived from statistical correlation, variable importance, and feature engineering, offering interpretability and justification for attribute selection
 ### Scoring and Prediction:
 - Developed SAS code to apply the selected-attributes decision tree model to new datasets, incorporating binning criteria for accurate predictions
+
+
+# Assignment Outcome: Comparison of Baseline vs Final Models
+The below section presents a comparison of
+---
