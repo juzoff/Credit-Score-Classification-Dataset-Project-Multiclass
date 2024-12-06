@@ -17,7 +17,7 @@
 
 ## Insights Report on Selected Attributes:
 ### > FILE:  
-    - d
+    - Detailed Insights Report on Selected Attributes.pdf
 #### Highlights:
 - Created a detailed report highlighting the selected attributes and their significance in predicting credit scores
 - Included insights derived from statistical correlation, variable importance, and feature engineering, offering interpretability and justification for attribute selection
