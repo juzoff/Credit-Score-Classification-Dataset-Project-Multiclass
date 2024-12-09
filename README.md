@@ -46,6 +46,10 @@ Throughout the project, I focused on improving model accuracy, interpretability,
 <img src="https://github.com/user-attachments/assets/a60cb414-b56d-463c-bd57-ed381bc456e0" width="600" />
 
 
+# Conclusion
+The comparison of model accuracy demonstrates clear improvements achieved through model refinement and feature selection. The baseline model with all attributes and a maximum depth of 10 achieved good accuracy on both training (81.76%) and test (81.13%) sets, indicating a strong starting point but with room for enhancement. The final model, developed with binned and selected attributes and optimized to a maximum depth of 18, achieved significantly higher training accuracy (91.03%) and improved test accuracy (84.87%). These results highlight the effectiveness of attribute selection, feature engineering, and hyperparameter tuning in improving model performance and generalizability.
+
+---
 
 # Branches: 
 ## *>Branch 1<*
