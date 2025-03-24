@@ -81,9 +81,10 @@
 - Training and Evaluation: Accuracy (0.6370), balanced recall across classes (Poor: 0.56, Standard: 0.56, Good: 0.70).
 - Results: Moderate performance, less biased toward majority class than Model 2.
 
-6. Visualization:
-- Plotted confusion matrices using seaborn.heatmap for each model to visualize prediction performance.
-- Created bar plots comparing accuracy, specificity, recall, and precision across all four models, highlighting trade-offs (e.g., Model 3’s high Poor recall vs. lower overall accuracy).
+6. Evaluation Metrics:
+- For each model, computed accuracy, recall, precision, specificity per class, and confusion matrices. Specificity calculated as TN/(TN+FP).
+7. Visualization:
+Created a bar plot comparing accuracy, specificity, recall, and precision across all four models using matplotlib and pandas, with a large figure size (20x15) for readability.
 
 ### Step 4: Random Forests ###
 ---
@@ -123,9 +124,45 @@
 - Training and Evaluation: Highest accuracy (0.6773), best recall for Good (0.77), lowest for Poor (0.45).
 - Results: Strong Good class performance, weaker Poor detection.
 
-6. Visualization:
-- Created bar plots comparing accuracy, specificity, recall, and precision across all four models using matplotlib and pandas. 
+6. Evaluation Metrics:
+- For each model, computed accuracy, recall, precision, specificity per class, and confusion matrices. Specificity calculated as TN/(TN+FP).
+7. Visualization:
+Created a bar plot comparing accuracy, specificity, recall, and precision across all four models using matplotlib and pandas, with a large figure size (20x15) for readability.
 
 ### Step 5: Multinomial Logistic Regression ###
 ---
+1. Data Loading and Initial Exploration:
+- Loaded the dataset with 10,000 rows and 23 columns (10 float64, 6 int64, 7 object).
+- Confirmed no missing values and checked Credit_Score distribution: Standard (5317), Poor (2900), Good (1783).
+2. Model 1: Logistic Regression with Balancing - All Features:
+- Preprocessing: Encoded categorical features with one-hot encoding (pd.get_dummies) and standardized numeric features using StandardScaler.
+- Train-Test Split: Split into 70% training (7000 rows) and 30% testing (3000 rows).
+- Balancing: Undersampled Standard to match Poor (2046) with RandomUnderSampler, then oversampled Good to 2046 with SMOTE, balancing training data (2046 each).
+- Hyperparameter Tuning: Used RandomizedSearchCV with parameters (C, solver='lbfgs', max_iter) to find best settings (e.g., C=1.934, max_iter=200).
+- Training and Evaluation: Trained the model, achieving accuracy (0.6513), recall for Poor (0.65), and precision for Good (0.75). Noted convergence warnings suggesting more iterations or better scaling.
+- Results: Balanced performance with decent Poor recall.
+3. Model 2: Logistic Regression without Balancing - All Features:
+- Preprocessing: Same encoding and standardization as Model 1.
+- Balancing: No balancing; used original distribution (Standard: 3723, Poor: 2046, Good: 1231 in training).
+- Hyperparameter Tuning: RandomizedSearchCV identified best parameters (e.g., C=1.934, max_iter=200).
+- Training and Evaluation: Accuracy (0.6520), higher recall for Good (0.75), lower for Poor (0.50). Convergence warnings persisted.
+- Results: Favored majority class (Good), weaker Poor detection.
+4. Model 3: Logistic Regression with Balancing - Selected Features:
+- Preprocessing: Same encoding and standardization.
+- Balancing: Same undersampling and SMOTE as Model 1.
+- Feature Selection: Used a Random Forest (n_estimators=50) to select the top 10 features based on importance (e.g., Annual_Income, Num_Credit_Card).
+- Hyperparameter Tuning: RandomizedSearchCV found best parameters (e.g., C=3.845, max_iter=100).
+- Training and Evaluation: Accuracy (0.5940), highest recall for Poor (0.74), lower recall for Good (0.51).
+- Results: Strong Poor class detection, reduced overall accuracy.
+5. Model 4: Logistic Regression without Balancing - Selected Features:
+- Preprocessing: Same encoding and standardization, no balancing.
+- Feature Selection: Same method as Model 3, selecting top 10 features (e.g., Monthly_Inhand_Salary, Outstanding_Debt).
+- Hyperparameter Tuning: Best parameters from RandomizedSearchCV (e.g., C=3.845, max_iter=100).
+- Training and Evaluation: Accuracy (0.6383), highest recall for Good (0.79), lowest for Poor (0.40).
+- Results: Strong Good class performance, poor Poor recall.
+6. Evaluation Metrics:
+- For each model, computed accuracy, recall, precision, specificity per class, and confusion matrices. Specificity calculated as TN/(TN+FP).
+7. Visualization:
+Created a bar plot comparing accuracy, specificity, recall, and precision across all four models using matplotlib and pandas, with a large figure size (20x15) for readability.
+
 
