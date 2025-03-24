@@ -45,6 +45,46 @@
 
 ### Step 3: Decision Trees ###
 ---
+1. Data Loading and Initial Exploration:
+- Loaded the cleaned dataset with 10,000 rows and 23 columns (10 float64, 6 int64, 7 object).
+- Confirmed no missing values and checked the distribution of Credit_Score: Standard (5317), Poor (2900), Good (1783).
+
+2. Model 1: Decision Tree with Balancing - All Features:
+- Preprocessing: Encoded categorical features using one-hot encoding (pd.get_dummies).
+- Train-Test Split: Split data into 70% training (7000 rows) and 30% testing (3000 rows).
+- Balancing:
+  - Undersampled Standard to match Poor (2046) using RandomUnderSampler.
+  - Oversampled Good to 2046 using SMOTE, resulting in balanced training data (2046 each).
+- Hyperparameter Tuning: Used GridSearchCV with parameters (max_depth, min_samples_split, min_samples_leaf, criterion='gini') to find the best settings (e.g., max_depth=10).
+- Training and Evaluation: Trained a Decision Tree with the best parameters and evaluated using accuracy (0.6543), precision, recall, specificity per class, and a confusion matrix.
+- Results: Recall for Poor (0.60), Precision for Good (0.74), balanced performance across classes.
+
+3. Model 2: Decision Tree without Balancing - All Features:
+- Preprocessing: Same encoding and train-test split as Model 1.
+- Balancing: No balancing applied; used original class distribution (Standard: 3723, Poor: 2046, Good: 1231 in training).
+- Hyperparameter Tuning: GridSearchCV identified best parameters (e.g., max_depth=10).
+- Training and Evaluation: Trained and evaluated, achieving higher accuracy (0.6713), with better recall for Good (0.75) but lower recall for Poor (0.55).
+- Results: Favored majority class (Standard/Good) due to imbalance.
+
+4. Model 3: Decision Tree with Balancing - Selected Features:
+- Preprocessing: Same encoding and split as above.
+- Balancing: Applied undersampling (Standard to 2046) and SMOTE (Good to 2046), as in Model 1.
+- Feature Selection: Used RFECV with a Decision Tree to select the top 10 features (e.g., Age, Annual_Income, Num_Bank_Accounts).
+- Hyperparameter Tuning: GridSearchCV found best parameters (e.g., max_depth=10, min_samples_leaf=8).
+- Training and Evaluation: Trained on selected features, resulting in lower accuracy (0.5727) but higher recall for Poor (0.75), though recall for Good dropped (0.46).
+- Results: Improved Poor class detection at the cost of overall accuracy.
+
+5. Model 4: Decision Tree without Balancing - Selected Features:
+- Preprocessing: Same encoding, split, and no balancing as Model 2.
+- Feature Selection: RFECV selected the same top 10 features as Model 3.
+- Hyperparameter Tuning: Best parameters via GridSearchCV (e.g., max_depth=10).
+- Training and Evaluation: Accuracy (0.6370), balanced recall across classes (Poor: 0.56, Standard: 0.56, Good: 0.70).
+- Results: Moderate performance, less biased toward majority class than Model 2.
+
+6. Visualization:
+- Plotted confusion matrices using seaborn.heatmap for each model to visualize prediction performance.
+- Created bar plots comparing accuracy, specificity, recall, and precision across all four models, highlighting trade-offs (e.g., Model 3’s high Poor recall vs. lower overall accuracy).
+
 
 
 
