@@ -45,7 +45,7 @@
 - Resulted in data_6 with no missing values across 23 columns, maintaining the original structure but with cleaned and imputed data.
 #### This preprocessing pipeline addressed data type issues, outliers, negative values, missing data, and statistical validation, preparing the dataset for further analysis or modeling.
 
-### Step 3: Decision Trees ###
+### Step 3: Decision Tree ###
 ---
 1. Data Loading and Initial Exploration:
 - Loaded the cleaned dataset with 10,000 rows and 23 columns (10 float64, 6 int64, 7 object).
@@ -88,7 +88,7 @@
 7. Visualization:
 Created a bar plot comparing accuracy, specificity, recall, and precision across all four models using matplotlib and pandas, with a large figure size (20x15) for readability.
 
-### Step 4: Random Forests ###
+### Step 4: Random Forest ###
 ---
 1. Data Loading and Initial Exploration:
 - Loaded the dataset with 10,000 rows and 23 columns (10 float64, 6 int64, 7 object).
