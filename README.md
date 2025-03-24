@@ -1,5 +1,7 @@
 # Credit-Score-Classification-Dataset-Project-Multiclass
 
+---
+
 ## PROJECT GOAL: Develop robust multiclass classification models (Decision Trees, Random Forests, Multinomial Logistic Regression, KNN) that effectively balances risk mitigation and customer acquisition by accurately predicting credit scores across three categories: "Poor," "Standard," and "Good."
 
 ---
@@ -204,7 +206,7 @@ Created a bar plot comparing accuracy, specificity, recall, and precision across
 ---
 
 ## CHOOSING STRONGEST MODEL WHEN CONSIDERING RESEARCH OBJECTIVES - ANALYSIS OF MODELS
-
+---
 ### Decision Trees:
 ![image](https://github.com/user-attachments/assets/f3918fe7-cadb-45bb-b235-9555a948f90e)
 
@@ -217,7 +219,29 @@ Created a bar plot comparing accuracy, specificity, recall, and precision across
 ### KNN:
 ![image](https://github.com/user-attachments/assets/8927264a-ba4f-4bf1-9c65-fef4eb03f8e4)
 
+---
+
 ### Research Objective # 1
-- Strongest Model
+- Strongest Model: Random Forest (With Balancing - All Features)
+  - Poor Recall: 0.76 (highest across all models)
+  - This model is the most effective at identifying risky individuals.
 ### Research Objective # 2
-- Strongest Model
+- Strongest Model (i): Random Forest (With Balancing - Selected Features)
+  - Good Precision: 0.80 (highest across all models)
+  - This model excels at accurately identifying Good credit scores, optimizing marketing efforts for high-value customers.
+- Strongest Model (ii): Random Forest (Without Balancing - Selected Features)
+  - Standard Precision: 0.70 (highest across all models)
+  - This model is the most effective at correctly classifying Standard credit scores, reducing wasted marketing efforts on this group.
+
+---
+
+## CONCLUSION
+---
+
+The Credit-Score-Classification-Dataset-Project-Multiclass developed multiclass classification models to predict "Poor," "Standard," and "Good" credit scores, balancing risk mitigation and customer acquisition. Random Forests outperformed Decision Trees, Multinomial Logistic Regression, and KNN. For risk mitigation, Random Forest (With Balancing - All Features) achieved the highest Poor Recall (0.76), effectively identifying risky individuals. For customer acquisition, Random Forest (With Balancing - Selected Features) excelled with Good Precision (0.80), while Random Forest (Without Balancing - Selected Features) led with Standard Precision (0.70). 
+
+### OBSERVATION: The balanced Random Forest with selected features (Poor Recall: 0.75, Good Precision: 0.80, Standard Precision: 0.64, Accuracy: 0.6767) offers the best trade-off for both objectives, making it the recommended model for robust credit score classification.
+
+
+
+
