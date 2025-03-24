@@ -87,5 +87,45 @@
 
 ### Step 4: Random Forests ###
 ---
+1. Data Loading and Initial Exploration:
+- Loaded the dataset with 10,000 rows and 23 columns (10 float64, 6 int64, 7 object).
+- Confirmed no missing values and checked Credit_Score distribution: Standard (5317), Poor (2900), Good (1783).
 
+2. Model 1: Random Forest with Balancing - All Features:
+- Preprocessing: Encoded categorical features using one-hot encoding (pd.get_dummies).
+- Train-Test Split: Split into 70% training (7000 rows) and 30% testing (3000 rows).
+- Balancing:
+  - Undersampled Standard to match Poor (2046) using RandomUnderSampler.
+  - Oversampled Good to 2046 using SMOTE, balancing training data (2046 each).
+- Hyperparameter Tuning: Used GridSearchCV with parameters (n_estimators, max_depth, min_samples_split, min_samples_leaf, criterion='gini') to find the best settings (e.g., n_estimators=150, max_depth=None).
+- Training and Evaluation: Trained a Random Forest with the best parameters, achieving accuracy (0.6563), with high recall for Poor (0.76) and precision for Good (0.80).
+- Results: Strong Poor class detection, balanced performance.
+
+3. Model 2: Random Forest without Balancing - All Features:
+- Preprocessing: Same encoding and split as Model 1.
+- Balancing: No balancing; used original distribution (Standard: 3723, Poor: 2046, Good: 1231 in training).
+- Hyperparameter Tuning: GridSearchCV identified best parameters (e.g., n_estimators=100, max_depth=None).
+- Training and Evaluation: Accuracy (0.6693), higher recall for Good (0.74), lower for Poor (0.49).
+- Results: Favored majority class (Good/Standard) due to imbalance.
+
+4. Model 3: Random Forest with Balancing - Selected Features:
+- Preprocessing: Same encoding and split.
+- Balancing: Applied undersampling (Standard to 2046) and SMOTE (Good to 2046), as in Model 1.
+- Feature Selection: Used a base Random Forest (n_estimators=50) to compute feature importances and selected the top 10 features (e.g., Outstanding_Debt, Interest_Rate).
+- Hyperparameter Tuning: Used RandomizedSearchCV (fewer iterations than GridSearch) with a smaller parameter grid, finding best settings (e.g., n_estimators=150, max_depth=20).
+- Training and Evaluation: Accuracy (0.6767), high recall for Poor (0.75) and Standard (0.75), precision for Good (0.80).
+- Results: Best overall balanced performance with fewer features.
+
+5. Model 4: Random Forest without Balancing - Selected Features:
+- Preprocessing: Same encoding and split, no balancing (original distribution).
+- Feature Selection: Same method as Model 3, selecting top 10 features (e.g., Outstanding_Debt, Delay_from_due_date).
+- Hyperparameter Tuning: RandomizedSearchCV found best parameters (e.g., n_estimators=150, max_depth=None).
+- Training and Evaluation: Highest accuracy (0.6773), best recall for Good (0.77), lowest for Poor (0.45).
+- Results: Strong Good class performance, weaker Poor detection.
+
+6. Visualization:
+- Created bar plots comparing accuracy, specificity, recall, and precision across all four models using matplotlib and pandas. 
+
+### Step 5: Multinomial Logistic Regression ###
+---
 
