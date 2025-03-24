@@ -1,6 +1,6 @@
 # Credit-Score-Classification-Dataset-Project-Multiclass
 
-### PROJECT GOAL: Develop robust multiclass classification models (Decision Trees, Random Forests, Multinomial Logistic Regression, KNN) that effectively balances risk mitigation and customer acquisition by accurately predicting credit scores across three categories: "Poor," "Standard," and "Good."
+## PROJECT GOAL: Develop robust multiclass classification models (Decision Trees, Random Forests, Multinomial Logistic Regression, KNN) that effectively balances risk mitigation and customer acquisition by accurately predicting credit scores across three categories: "Poor," "Standard," and "Good."
 
 ---
 
@@ -201,4 +201,23 @@ Created a bar plot comparing accuracy, specificity, recall, and precision across
 7. Visualization:
 - Created a bar plot comparing accuracy, specificity, recall, and precision across all four models using matplotlib and pandas, with a large figure size (20x15) for readability.
 
+---
 
+## CHOOSING STRONGEST MODEL WHEN CONSIDERING RESEARCH OBJECTIVES - ANALYSIS OF MODELS
+
+### Decision Trees:
+![image](https://github.com/user-attachments/assets/f3918fe7-cadb-45bb-b235-9555a948f90e)
+
+### Random Forests:
+![image](https://github.com/user-attachments/assets/24cf0464-bfe5-480f-badc-15679e2807d7)
+
+### Multinomial Logistic Regression:
+![image](https://github.com/user-attachments/assets/95ac3e2b-9a39-42a5-8bd8-6df1aa7cd13f)
+
+### KNN:
+![image](https://github.com/user-attachments/assets/8927264a-ba4f-4bf1-9c65-fef4eb03f8e4)
+
+### Research Objective # 1
+- Strongest Model
+### Research Objective # 2
+- Strongest Model
