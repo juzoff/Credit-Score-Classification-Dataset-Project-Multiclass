@@ -6,11 +6,11 @@
 
 ### Step 1: Research Objectives ###
 ---
-1. Research Objective 1: Risk Mitigation: Minimizing the Misclassification of Poor Credit Scores
+1. Research Objective # 1: Risk Mitigation: Minimizing the Misclassification of Poor Credit Scores
 * Goal: Reduce the risk of classifying "Poor" credit scores as "Standard" or "Good" to avoid approving risky individuals.
 * Key Metric to Focus On: Recall for the "Poor" class → Ensures that most truly poor credit scores are identified correctly.
 
-2. Research Objective 2: Customer Acquisition: Focused on Good and Standard Credit Scores
+2. Research Objective # 2: Customer Acquisition: Focused on Good and Standard Credit Scores
 * Goal: Maximize marketing efforts by accurately identifying "Good" and "Standard" credit scores for customer acquisition.
 * Key Metric to Focus On: Precision for Good and Standard Classes → Ensures that most individuals classified as "Good" or "Standard" are truly in those categories, minimizing wasted marketing efforts.
 
