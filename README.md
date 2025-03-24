@@ -1,6 +1,6 @@
 # Credit-Score-Classification-Dataset-Project-Multiclass
 
-### PROJECT GOAL: Develop robust multiclass classification models that effectively balances risk mitigation and customer acquisition by accurately predicting credit scores across three categories: "Poor," "Standard," and "Good."
+### PROJECT GOAL: Develop robust multiclass classification models (Decision Trees, Random Forests, Multinomial Logistic Regression, KNN) that effectively balances risk mitigation and customer acquisition by accurately predicting credit scores across three categories: "Poor," "Standard," and "Good."
 
 ---
 
@@ -85,6 +85,7 @@
 - Plotted confusion matrices using seaborn.heatmap for each model to visualize prediction performance.
 - Created bar plots comparing accuracy, specificity, recall, and precision across all four models, highlighting trade-offs (e.g., Model 3’s high Poor recall vs. lower overall accuracy).
 
-
+### Step 4: Random Forests ###
+---
 
 
