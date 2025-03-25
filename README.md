@@ -17,7 +17,7 @@
 * Key Metric to Focus On: Precision for Good and Standard Classes → Ensures that most individuals classified as "Good" or "Standard" are truly in those categories, minimizing wasted marketing efforts.
 
 3. Research Objective # 3 (BONUS: SEE BOTTOM OF PAGE): Fairness in Credit Score Classification: Ensuring Equal Recall Across Demographic Groups
-* Goal: Ensure that individuals from different demographic groups (e.g., gender, age, income) receive equal treatment in terms of credit score classification, particularly for the "Poor" class. This will help mitigate bias and ensure fairness in the model's performance.
+* Goal: Ensure that individuals from different demographic groups (occupation, age, income) receive equal treatment in terms of credit score classification, particularly for the "Poor" class. This will help mitigate bias and ensure fairness in the model's performance.
 * Key Metric to Focus On: Recall for "Poor" Credit Scores Across Demographic Groups → Ensures that the model identifies "Poor" credit scores equally well across different groups (e.g., gender, age, income).
 
 ### Step 2: Data Preprocessing ###
