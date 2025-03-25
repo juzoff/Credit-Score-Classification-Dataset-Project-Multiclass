@@ -246,6 +246,8 @@ The Credit-Score-Classification-Dataset-Project-Multiclass developed multiclass 
 
 ### OBSERVATION: The balanced Random Forest with selected features (Poor Recall: 0.75, Good Precision: 0.80, Standard Precision: 0.64, Accuracy: 0.6767) offers the best trade-off for both objectives, making it the recommended model for robust credit score classification.
 
+---
 
+### (BONUS) Research Objective # 3: Fairness in Credit Score Classification: Ensuring Equal Recall Across Demographic Groups ###
 
 
