@@ -248,7 +248,17 @@ The Credit-Score-Classification-Dataset-Project-Multiclass developed multiclass 
 
 ---
 
-### (BONUS) Research Objective # 3: Fairness in Credit Score Classification: Ensuring Equal Recall Across Demographic Groups ###
-- Research Objective: The goal of this research is to ensure fairness in credit score classification by focusing on equal recall rates for individuals classified as "Poor" across different demographic groups (e.g., gender, age, income). The aim is to mitigate bias in the model and ensure that all groups are treated equally in the prediction of creditworthiness.
+### (BONUS) Research Objective # 3: Fairness in Credit Score Classification: Ensuring Equal Recall Across Demographic Groups 
+- Research Objective: The goal of this research is to ensure fairness in credit score classification by focusing on equal recall rates for individuals classified as "Poor" across different demographic groups (occupation, age, income). The aim is to mitigate bias in the model and ensure that all groups are treated equally in the prediction of creditworthiness.
 - Key Focus: The primary metric for fairness is recall for "Poor" credit scores, which measures the model's ability to correctly identify individuals with poor credit scores. The disparity in recall rates across demographic groups will be assessed to identify potential bias in the model’s performance.
 - Model Used: The Balanced Random Forest with selected features is used for this analysis. This model offers the best trade-off between different metrics (Poor Recall: 0.75, Good Precision: 0.80, Standard Precision: 0.64, Accuracy: 0.6767), making it the recommended model for achieving both fairness and robustness in credit score classification.
+
+#### Analysis:
+![image](https://github.com/user-attachments/assets/c0ddbcf9-0c65-4d71-a40f-cb0e4ebacac2)
+
+![image](https://github.com/user-attachments/assets/3cd3a2bf-cd1a-4017-bafc-3ff6ff868059)
+
+![image](https://github.com/user-attachments/assets/965eac3e-f32b-491b-b774-3f0ccf4661a8)
+
+#### Conclusion:
+
