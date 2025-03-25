@@ -260,5 +260,17 @@ The Credit-Score-Classification-Dataset-Project-Multiclass developed multiclass 
 
 ![image](https://github.com/user-attachments/assets/965eac3e-f32b-491b-b774-3f0ccf4661a8)
 
+- Age Groups
+  - Recall for "Poor" credit scores rises with younger age: Older Adults (0.47), Middle-Aged Adults (0.58), Young Adults (0.68), Younger Adults (0.73). The model struggles most with Older Adults (47% identified) and excels with Younger Adults (73%), a 26-point gap. This suggests bias against older individuals, possibly due to unrepresentative features or data, potentially disadvantaging them in credit access.
+
+- Occupations
+  - Recall varies widely across occupations, from 0.53 (Manager) to 0.82 (Scientist), a 29-point spread. High-recall roles like Scientist (0.82) and Developer (0.73) contrast with low-recall ones like Manager (0.53) and Journalist (0.56). This uneven performance hints at occupation-specific biases, possibly tied to income volatility, penalizing certain professions.
+
+- Income Groups
+  - Recall spans from 0.13 (High Income) to 0.78 (Low Income), a 65-point gap. The model rarely flags High Income poor risks (13%), likely due to data rarity, while excelling for Low Income (78%). This disparity suggests high-income individuals avoid scrutiny, while low-income ones face it more, risking socioeconomic inequity.
+
+
 #### Conclusion:
+- The Balanced Random Forest model, while robust (Poor Recall: 0.75, Accuracy: 0.6767), fails to ensure fairness in credit score classification. Recall disparities—26 points across age groups, 29 across occupations, and 65 across income groups—reveal significant bias, particularly disadvantaging older adults, certain professions, and low-income individuals. To meet the objective of equal recall across demographics, the model requires data rebalancing and fairness adjustments.
+
 
